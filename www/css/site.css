@@ -1,0 +1,91 @@
+/* Custom site styles: modal overlay for form success/error feedback */
+
+.site-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.65);
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.site-modal__box {
+    background: #fff;
+    border-radius: 8px;
+    padding: 40px 48px;
+    max-width: 480px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25);
+    position: relative;
+}
+
+.site-modal__icon {
+    font-size: 54px;
+    line-height: 1;
+    margin-bottom: 16px;
+}
+
+.site-modal--success .site-modal__icon { color: #2e7d32; }
+.site-modal--error   .site-modal__icon { color: #c62828; }
+
+.site-modal__title {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0 0 12px;
+    color: #222;
+}
+
+.site-modal__message {
+    font-size: 15px;
+    color: #555;
+    margin: 0 0 24px;
+    line-height: 1.5;
+}
+
+.site-modal__btn {
+    display: inline-block;
+    padding: 12px 32px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    background: #8c0000;
+    transition: background 0.2s;
+}
+
+.site-modal__btn:hover {
+    background: #a00000;
+}
+
+.site-modal__close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: #999;
+    line-height: 1;
+}
+
+.site-modal__close:hover {
+    color: #333;
+}
+
+/* Honeypot field — visually hidden, not display:none so browsers still include it */
+.site-honeypot {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
